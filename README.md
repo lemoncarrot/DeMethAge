@@ -1,7 +1,5 @@
-Hey Viewer!
+DeMethAge: Decoding the Secrets of Aging with Epigenetics
 
-This is the official framework for DeMethAge! Feel free to reach out to me @ kchen020202@gmail.com for access to the processed datasets so you can jump into the analyses! 
+DeMethAge is an optimized whole blood epigenetic clock that aims to capture complex epigenetic signals related to aging. To accurately predict biological age, DeMethAge employs a simple 3-step framework: hierarchical clustering for feature selection, methylation-based deconvolution, and a machine learning approach. 17 datasets from the Gene Expression Omnibus (GEO) (GSE114134, GSE50660, GSE89253, GSE53740, GSE90124, GSE40279, GSE67705, GSE85568, GSE106648, GSE61256, GSE51057, GSE73103, GSE70977, GSE53051, GSE124076, GSE124366, GSE101764) were downloaded, with 4937 samples and ages encompassing 0-100 years old. These were reduced to a beta value matrix (i, j), where i represents an integer 0-100 and j represents a single CpG site. Hierarchical clustering using the "ward.D2" method was performed an heatmaps were constructed to investigate differential methylation patterns. Three main patterns were identified: periodic, monotonic, and linear, of which the first 2 are novel. Additionally a study done by Salas et al., December 2023, found that whole blood-based epigenetic clocks suffered from blood heterogeneiety, and differing composition of leukocytes could confound accuracy. GSE40279 was utilized for the model, the exact dataset from Hannum's pioneer epigenetic clock. Biological age was predicted using a feed-forward neural network, and leukocyte composition calculated using FlowSorted.BloodExtended.EPIC was regressed upon the neural network output using elastic net. Overall, this pipeline can contribute to a greater understanding of the epigenetics of aging. 
 
-*All code is in R except "model_1_segment" and "model_2_segment" (Python)
-
-Note: FlowSorted.BloodExtended.EPIC requires a signed license through and academic institution.
+Note: This package is still in development. We aim to download more data for the model training and testing, improving statistical power. 
